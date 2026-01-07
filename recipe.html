@@ -9,20 +9,7 @@
     <meta property="og:image" content="https://example.com/img.jpg' autofocus onfocus='alert(3)' style='width:1000px;height:1000px">
 
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Recipe",
-      "name": "Recipe <details open ontoggle=alert('JSON_LD_NAME')>",
-      "image": [
-        "https://example.com/a.jpg\" onerror=\"alert('JSON_LD_IMAGE')\"",
-        "javascript:alert('PROTOCOL_BYPASS')"
-      ],
-      "recipeIngredient": [
-        "1 unit <math><mtext><option><form><math><mglyph><svg><style><path id='x'></path><img src=x onerror=alert('INGREDIENT_XSS')>",
-        "2 units <iframe srcdoc='&lt;script&gt;alert(document.domain)&lt;/script&gt;'></iframe>"
-      ],
-      "recipeInstructions": "Step 1: <object data='javascript:alert(4)'></object>"
-    }
+alert(document.domain)
     </script>
 </head>
 <body>
