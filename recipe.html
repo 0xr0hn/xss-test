@@ -1,20 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>Exploit: <img src=x onerror=alert(1)></title>
+    
+    <meta property="og:title" content="<svg/onload=alert('OG_TITLE')>">
+    <meta property="og:description" content="Click <a href='javascript:alert(1)'>here</a> or <iframe src='javascript:alert(2)'></iframe>">
+    <meta property="og:image" content="https://example.com/img.jpg' autofocus onfocus='alert(3)' style='width:1000px;height:1000px">
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org/",
       "@type": "Recipe",
-      "name": "<script>alert('XSS_NAME')</script>",
-      "image": ["https://example.com/image.jpg\" onload=\"alert('XSS_IMAGE')\""],
+      "name": "Recipe <details open ontoggle=alert('JSON_LD_NAME')>",
+      "image": [
+        "https://example.com/a.jpg\" onerror=\"alert('JSON_LD_IMAGE')\"",
+        "javascript:alert('PROTOCOL_BYPASS')"
+      ],
       "recipeIngredient": [
-        "<img src=x onerror=alert('XSS_INGREDIENT')>",
-        "1 cup of Malicious Code"
-      ]
+        "1 unit <math><mtext><option><form><math><mglyph><svg><style><path id='x'></path><img src=x onerror=alert('INGREDIENT_XSS')>",
+        "2 units <iframe srcdoc='&lt;script&gt;alert(document.domain)&lt;/script&gt;'></iframe>"
+      ],
+      "recipeInstructions": "Step 1: <object data='javascript:alert(4)'></object>"
     }
     </script>
 </head>
 <body>
-    <h1>Exploit Recipe</h1>
+    <h1 class="recipe-title">Exploit <video><source onerror="alert('H1_XSS')"></video></h1>
+    
+    <div class="ingredients">
+        <ul>
+            <li>Item 1: <marquee onstart=alert('MARQUEE')>Bypass</marquee></li>
+            <li>Item 2: <isindex type=image src=1 onerror=alert('ISINDEX')></li>
+            <li>Item 3: <svg><animatetransform onbegin=alert('SVG_ANIMATE')></li>
+        </ul>
+    </div>
+
+    <p>Internal ID: 169.254.169.254</p>
 </body>
 </html>
