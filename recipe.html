@@ -2,27 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Exploit: <img src=x onerror=alert(1)></title>
-    
-    <meta property="og:title" content="<svg/onload=alert('OG_TITLE')>">
-    <meta property="og:description" content="Click <a href='javascript:alert(1)'>here</a> or <iframe src='javascript:alert(2)'></iframe>">
-    <meta property="og:image" content="https://example.com/img.jpg' autofocus onfocus='alert(3)' style='width:1000px;height:1000px">
+    <title>{{7*7}} Recipe</title>
 
     <script type="application/ld+json">
-alert(document.domain)
+    {
+      "@context": "https://schema.org/",
+      "@type": "Recipe",
+      "name": "{{7*7}} Name",
+      "description": "7*7 Description",
+      "recipeYield": "7*7",
+      "nutrition": {
+        "@type": "NutritionInformation",
+        "calories": "7*7",
+        "fatContent": "7*7"
+      },
+      "recipeIngredient": [
+        "{{7*7}} grams of logic",
+        "7*7 units of math"
+      ],
+      "recipeInstructions": [
+        {
+          "@type": "HowToStep",
+          "text": "Step 1: {{7*7}}"
+        }
+      ]
+    }
     </script>
 </head>
-<body>
-    <h1 class="recipe-title">Exploit <video><source onerror="alert('H1_XSS')"></video></h1>
+<body itemscope itemtype="https://schema.org/Recipe">
+    <h1 itemprop="name">{{7*7}}</h1>
+    <p itemprop="description">7*7</p>
     
     <div class="ingredients">
         <ul>
-            <li>Item 1: <marquee onstart=alert('MARQUEE')>Bypass</marquee></li>
-            <li>Item 2: <isindex type=image src=1 onerror=alert('ISINDEX')></li>
-            <li>Item 3: <svg><animatetransform onbegin=alert('SVG_ANIMATE')></li>
+            <li itemprop="recipeIngredient">
+                <span class="qty">7*7</span> 
+                <span class="name">{{7*7}}</span>
+            </li>
         </ul>
     </div>
 
-    <p>Internal ID: 169.254.169.254</p>
+    <div itemprop="recipeInstructions">
+        Mix {{7*7}} and 7*7 together.
+    </div>
+
+    <meta itemprop="calories" content="7*7">
 </body>
 </html>
